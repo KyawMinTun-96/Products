@@ -1,36 +1,50 @@
 <template>
     <div class="container">
       <div class="row">
-        <div class="col-md-4 mb-4" v-for="i in [1,2,3,4,5,6]" :key="i">
-          <div class="card" style="width: 18rem;">
+        <div class="col-md-4 mb-4" v-for="product in products" :key="product.id">
+          <div class="card">
             <div class="card-image">
-              <img src="@/assets/logo.png" class="img-fluid" alt="...">
+              <img :src="product.image" alt="...">
             </div>
             <div class="card-body text-center">
-              <p class="card-text text-muted fw-semibold">Product Name</p>
-              <h5 class="card-title my-4">$ 100</h5>
-              <a href="#" class="btn btn-primary d-block">More Details</a>
+              <h6 class="card-title my-4">{{ product.title }}</h6>
+              <p class="card-text text-muted fw-semibold">$ {{ product.price}}</p>
+              <RouterLink :to="`/products/${product.id}`" class="btn btn-primary d-block">More Details</RouterLink>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </template>
+</template>
   
-  <script>
+<script>
+  import axios from 'axios';
+
   export default {
-  
+    name: 'Products',
+    data() {
+      return {
+        products: []
+      }
+    },
+
+    created() {
+      axios.get('https://fakestoreapi.com/products')
+      .then(response => {
+        this.products = response.data;
+      })
+    }
   }
-  </script>
+</script>
 
 
-  <style>
-    .card-image {
-      height: 200px;
-    }
+<style>
+  .card-image {
+    display: flex;
+    justify-content: center;
+  }
 
-    .card-image img {
-      display: block;
-      margin: 0 auto;
-    }
-  </style>
+  .card-image img{
+    height: 200px;
+  }
+</style>

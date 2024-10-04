@@ -25,7 +25,7 @@
 
                     </form>
                     <div class="text-center">
-                        <small><span class="text-muted">Already an account? </span><a href="#">Login</a></small> 
+                        <small><span class="text-muted">Already an account? </span><a href="/login">Login</a></small> 
                     </div>
                 </div>
 

@@ -17,7 +17,7 @@
 
                     </form>
                     <div class="text-center">
-                        <small><span class="text-muted">Don't have an account? </span><a href="#">Register</a></small> 
+                        <small><span class="text-muted">Don't have an account? </span><a href="/signup">Register</a></small> 
                     </div>
                 </div>
 

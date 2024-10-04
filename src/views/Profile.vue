@@ -39,7 +39,7 @@
   }
 
     .profile-image {
-      background-color: blue;
+      background-color: rgb(222, 222, 222);
       width: 130px;
       height: 130px;
       border-radius: 50%;
